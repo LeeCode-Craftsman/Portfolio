@@ -14,13 +14,13 @@ Winning the game
 
 ## GUI Screenshots
 ![GUI.MainScreen.png](../Screenshots/GUI.MainScreen.png)
-Start screen <br><br>
+<br>Start screen <br><br>
 ![GUI.Loss.png](../Screenshots/GUI.Loss.png)
-Losing the game <br><br>
+<br>Losing the game <br><br>
 ![GUI.Win.png](../Screenshots/GUI.Win.png)
-Winning the game <br><br>
+<br>Winning the game <br><br>
 ![GUI.HighScores.png](../Screenshots/GUI.HighScores.png)
-High Scores page <br><br>
+<br>High Scores page <br><br>
 
 **Note: The Flag and Bomb icons were downloaded off of Google. 
 I have no idea if they are copyrighted, I used them only for demonstration purposes**
