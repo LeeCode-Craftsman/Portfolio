@@ -1,16 +1,16 @@
 # Minesweeper
 ## Console Screenshots
 ![Console.Start.png](../Screenshots/Console.Start.png)
-The screen upon starting the game <br><br>
+<br>The screen upon starting the game <br><br>
 ![Console.Play.png](../Screenshots/Console.Play.png)
-A scene from mid-game <br><br>
+<br>A scene from mid-game <br><br>
 ![Console.Select.png](../Screenshots/Console.Select.png)
-How to uncover a tile (in this case, tile (11, 9) in Cartesian format)
+<br>How to uncover a tile (in this case, tile (11, 9) in Cartesian format)
 <br><br>
 ![Console.Loss.png](../Screenshots/Console.Loss.png)
-Losing the game <br><br>
+<br>Losing the game <br><br>
 ![Console.Win.png](../Screenshots/Console.Win.png)
-Winning the game
+<br>Winning the game
 
 ## GUI Screenshots
 ![GUI.MainScreen.png](../Screenshots/GUI.MainScreen.png)
