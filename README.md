@@ -35,7 +35,7 @@ This project has two modes: GUI and Console.
 <br><br>
 This was a very simple project. If I remember correctly, the most difficult part was in the GUI version: I had to programatically create a 2d array of buttons, and sync those buttons to the existing array of Cells from the Base program.
 <br><br>
-To run this program, download the repository (again, please do not change the folder structure), open in a modern edition of VS Code, navigate to either Minesweeper/MinesweeperBase or Minesweeper/MinesweeperGUI, and run:
+To run this program, download the repository (again, please do not change the folder structure), open in a modern edition of VS Code (with the C# extensions), navigate to either Minesweeper/MinesweeperBase or Minesweeper/MinesweeperGUI, and run:
 ```bash
 dotnet clean
 dotnet build
