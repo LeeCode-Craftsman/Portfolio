@@ -1,0 +1,33 @@
+﻿@startuml
+start
+:Store reference to gameBoard.board[x, y] in variable //cell//;
+
+if (cell.isLive) then (true)
+	if (is 1st recursion?) then (yes)
+		:cell.isVisited = true;
+	endif
+	end
+endif
+
+:set cell.isVisited to true;
+
+if (cell.liveNeighbors equals 0) then (yes)
+	if (spaceExists(x + 1, y) returns true and gameBoard.board[x + 1, y].isVisited is false) then 
+		:call floodFill(x + 1, y, iterations + 1);
+	endif
+
+	if (spaceExists(x, y + 1) returns true and gameBoard.board[x, y + 1].isVisited is false) then 
+		:call floodFill(x, y + 1, iterations + 1);
+	endif
+
+	if (spaceExists(x - 1, y) returns true and gameBoard.board[x - 1, y].isVisited is false) then
+		:call floodFill(x - 1, y, iterations + 1);
+	endif
+
+	if (spaceExists(x, y - 1) returns true and gameBoard.board[x, y - 1].isVisited is false) then 
+		:call floodFill(x, y - 1, iterations + 1);
+	endif
+
+endif
+stop
+@enduml

@@ -1,0 +1,9 @@
+C:\Users\leemr\Projects\Portfolio\Minesweeper\MinesweeperBase\bin\Debug\net472\MinesweeperBase.exe.config
+C:\Users\leemr\Projects\Portfolio\Minesweeper\MinesweeperBase\bin\Debug\net472\MinesweeperBase.exe
+C:\Users\leemr\Projects\Portfolio\Minesweeper\MinesweeperBase\bin\Debug\net472\MinesweeperBase.pdb
+C:\Users\leemr\Projects\Portfolio\Minesweeper\MinesweeperBase\obj\Debug\net472\MinesweeperBase.csproj.AssemblyReference.cache
+C:\Users\leemr\Projects\Portfolio\Minesweeper\MinesweeperBase\obj\Debug\net472\MinesweeperBase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leemr\Projects\Portfolio\Minesweeper\MinesweeperBase\obj\Debug\net472\MinesweeperBase.csproj.CoreCompileInputs.cache
+C:\Users\leemr\Projects\Portfolio\Minesweeper\MinesweeperBase\obj\Debug\net472\MinesweeperBase.sourcelink.json
+C:\Users\leemr\Projects\Portfolio\Minesweeper\MinesweeperBase\obj\Debug\net472\MinesweeperBase.exe
+C:\Users\leemr\Projects\Portfolio\Minesweeper\MinesweeperBase\obj\Debug\net472\MinesweeperBase.pdb

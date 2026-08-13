@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net472</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseVisualBasic>true</UseVisualBasic>
+    <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+    <GenerateResourceWarnOnMissingSource>false</GenerateResourceWarnOnMissingSource>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
+    
+    <ProjectReference Include="..\MinesweeperBase\MinesweeperBase.csproj" />
+    <Reference Include="Microsoft.VisualBasic" />
+  </ItemGroup>
+</Project>

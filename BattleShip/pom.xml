@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                edu.gcu.cst120.battleship.battleship/edu.gcu.cst120.battleship.BattleShip
+                                edu.gcu.cst120.battleship.battleship/com.leemra.battleship.BattleShip
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

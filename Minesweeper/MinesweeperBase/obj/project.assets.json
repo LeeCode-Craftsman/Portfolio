@@ -1,0 +1,64 @@
+{
+  "version": 4,
+  "targets": {
+    "net472": {},
+    "net472/win-x86": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net472": []
+  },
+  "packageFolders": {
+    "C:\\Users\\leemr\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "c:\\Users\\leemr\\Projects\\Portfolio\\Minesweeper\\MinesweeperBase\\MinesweeperBase.csproj",
+      "projectName": "MinesweeperBase",
+      "projectPath": "c:\\Users\\leemr\\Projects\\Portfolio\\Minesweeper\\MinesweeperBase\\MinesweeperBase.csproj",
+      "packagesPath": "C:\\Users\\leemr\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\leemr\\Projects\\Portfolio\\Minesweeper\\MinesweeperBase\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\leemr\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net472"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net472": {
+          "framework": "net472",
+          "targetAlias": "net472",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.300"
+    },
+    "frameworks": {
+      "net472": {
+        "framework": "net472",
+        "targetAlias": "net472",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

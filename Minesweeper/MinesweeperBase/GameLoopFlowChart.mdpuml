@@ -1,0 +1,39 @@
+﻿@startuml
+skinparam classFontColor automatic
+!pragma UseVerticalIf on
+	start
+	#LightCyan:initialize board;
+	#LightCyan:declare boolean isGameOver
+	and initialize to false;
+
+	repeat
+		#LightCyan:call Console.Clear() to erase the previous turn's board;
+
+		#LightCyan:call printBoardForPlay() to display the current cleared cells;
+
+		#LightCyan:declare Integer variables x and y to hold the row and column numbers to reveal;
+
+		#LightCyan:call getUserInput(out x, out y);
+
+
+		#LightCyan:gameBoard.board[x, y].isVisited = true;
+
+		if (gameBoard.board[x, y].isLive) then (true)
+			#LightCyan:set isGameOver to true;
+			#LightCyan:call Console.Clear() to erase the previous board;
+			#LightCyan:call printBoard() to display the full board (including mines);
+			#LightCyan:call Console.WriteLine("BOOM!") to signal
+			to the player that the game is over;
+		( false) elseif (gameBoard.checkAllClear()) then (true)
+			#LightCyan:set isGameOver to true;
+			#LightCyan:call Console.Clear() to erase the previous board;
+			#LightCyan:call printBoard() to display the full board 
+			(including mines);
+			#LightCyan:call Console.WriteLine("Congratulations!") to signal
+			to the player that the game is over;
+		endif
+
+	repeat while (isGameOver = false)
+	#LightCyan:call Console.ReadLine() to keep the program from closing as soon as the loop ends;
+	stop
+@enduml

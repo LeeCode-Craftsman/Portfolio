@@ -1,0 +1,118 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\leemr\\Projects\\Portfolio\\Minesweeper\\MinesweeperGUI\\MinesweeperGUI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\leemr\\Projects\\Portfolio\\Minesweeper\\MinesweeperBase\\MinesweeperBase.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\leemr\\Projects\\Portfolio\\Minesweeper\\MinesweeperBase\\MinesweeperBase.csproj",
+        "projectName": "MinesweeperBase",
+        "projectPath": "C:\\Users\\leemr\\Projects\\Portfolio\\Minesweeper\\MinesweeperBase\\MinesweeperBase.csproj",
+        "packagesPath": "C:\\Users\\leemr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\leemr\\Projects\\Portfolio\\Minesweeper\\MinesweeperBase\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\leemr\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "framework": "net472",
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net472": {
+          "framework": "net472",
+          "targetAlias": "net472",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\leemr\\Projects\\Portfolio\\Minesweeper\\MinesweeperGUI\\MinesweeperGUI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\leemr\\Projects\\Portfolio\\Minesweeper\\MinesweeperGUI\\MinesweeperGUI.csproj",
+        "projectName": "MinesweeperGUI",
+        "projectPath": "C:\\Users\\leemr\\Projects\\Portfolio\\Minesweeper\\MinesweeperGUI\\MinesweeperGUI.csproj",
+        "packagesPath": "C:\\Users\\leemr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\leemr\\Projects\\Portfolio\\Minesweeper\\MinesweeperGUI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\leemr\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "framework": "net472",
+            "targetAlias": "net472",
+            "projectReferences": {
+              "C:\\Users\\leemr\\Projects\\Portfolio\\Minesweeper\\MinesweeperBase\\MinesweeperBase.csproj": {
+                "projectPath": "C:\\Users\\leemr\\Projects\\Portfolio\\Minesweeper\\MinesweeperBase\\MinesweeperBase.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net472": {
+          "framework": "net472",
+          "targetAlias": "net472",
+          "dependencies": {
+            "System.Resources.Extensions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

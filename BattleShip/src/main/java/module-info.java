@@ -1,8 +1,8 @@
-module edu.gcu.cst120.battleship.battleship {
+module com.leemra.battleship.battleship {
 	requires javafx.controls;
 	requires javafx.fxml;
 	
 	
-	opens edu.gcu.cst120.battleship to javafx.fxml;
-	exports edu.gcu.cst120.battleship;
+	opens com.leemra.battleship to javafx.fxml;
+	exports com.leemra.battleship;
 }
