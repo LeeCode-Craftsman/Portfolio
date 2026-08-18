@@ -4,12 +4,6 @@ import java.util.Random;
 
 public class Computer {
 	/**
-	 * The BattleShipController that created this Computer object
-	 *
-	 * @see BattleShipController
-	 */
-	private final BattleShipController game;
-	/**
 	 * A Random object that is used many times in the system
 	 */
 	private final Random rand;
@@ -22,10 +16,12 @@ public class Computer {
 	 * Determines whether to fire randomly or pattern-match for a ship
 	 */
 	private boolean tracing = false;
+
+	BattleShipCore core;
 	
-	public Computer(BattleShipController controller) {
-		game = controller;
+	public Computer(BattleShipCore core) {
 		rand = new Random();
+		this.core = core;
 	}
 	
 	/**
@@ -55,8 +51,8 @@ public class Computer {
 				do {
 					x = rand.nextInt(0, 10);
 					y = rand.nextInt(0, 10);
-				} while ((game.playerBoard[x][y] == 1) || (game.playerBoard[x][y] == 3));
-				hit = new boolean[]{game.fire(x, y, false), true};
+				} while ((core.playerBoard[x][y] == 1) || (core.playerBoard[x][y] == 3));
+				hit = new boolean[]{core.fire(x, y, false), true};
 				if (hit[0]) {
 					tracing = true;
 					center[0] = x;
@@ -79,7 +75,7 @@ public class Computer {
 	
 	/**
 	 * <b>The main logic for the pattern-trace firing.</b> Called from fire()<br>
-	 * Fires at a single cell in the square surrounding <i>game.&lt;player/cp&gt;Board[x][y]</i>.<br/>
+	 * Fires at a single cell in the square surrounding <i>core.&lt;player/cp&gt;Board[x][y]</i>.<br/>
 	 * Changes direction in counterclockwise order starting from the top, using a global variable to remember the current direction.<br/>
 	 * After the four cardinal directions, it starts again at the north-west (top-left).<br/>
 	 *
@@ -92,8 +88,8 @@ public class Computer {
 		boolean hit = false;
 		switch (dDN[1]) {
 			case 0 -> {
-				if (x > 0 && (game.playerBoard[x - 1][y] != 1 && game.playerBoard[x - 1][y] != 3)) {
-					hit = game.fire(x - 1, y, false);
+				if (x > 0 && (core.playerBoard[x - 1][y] != 1 && core.playerBoard[x - 1][y] != 3)) {
+					hit = core.fire(x - 1, y, false);
 					if (hit) {
 						center[0] = x - 1;
 						center[1] = y;
@@ -122,8 +118,8 @@ public class Computer {
 				}
 			}
 			case 1 -> {
-				if (y > 0 && (game.playerBoard[x][y - 1] != 1 && game.playerBoard[x][y - 1] != 3)) {
-					hit = game.fire(x, y - 1, false);
+				if (y > 0 && (core.playerBoard[x][y - 1] != 1 && core.playerBoard[x][y - 1] != 3)) {
+					hit = core.fire(x, y - 1, false);
 					if (hit) {
 						center[0] = x;
 						center[1] = y - 1;
@@ -152,8 +148,8 @@ public class Computer {
 				}
 			}
 			case 2 -> {
-				if (x < 9 && (game.playerBoard[x + 1][y] != 1 && game.playerBoard[x + 1][y] != 3)) {
-					hit = game.fire(x + 1, y, false);
+				if (x < 9 && (core.playerBoard[x + 1][y] != 1 && core.playerBoard[x + 1][y] != 3)) {
+					hit = core.fire(x + 1, y, false);
 					if (hit) {
 						center[0] = x + 1;
 						center[1] = y;
@@ -182,8 +178,8 @@ public class Computer {
 				}
 			}
 			case 3 -> {
-				if (y < 9 && (game.playerBoard[x][y + 1] != 1 && game.playerBoard[x][y + 1] != 3)) {
-					hit = game.fire(x, y + 1, false);
+				if (y < 9 && (core.playerBoard[x][y + 1] != 1 && core.playerBoard[x][y + 1] != 3)) {
+					hit = core.fire(x, y + 1, false);
 					if (hit) {
 						center[0] = x;
 						center[1] = y + 1;
@@ -212,8 +208,8 @@ public class Computer {
 				}
 			}
 			case 4 -> {
-				if (x > 0 && y > 0 && (game.playerBoard[x - 1][y - 1] != 1 && game.playerBoard[x - 1][y - 1] != 3)) {
-					hit = game.fire(x - 1, y - 1, false);
+				if (x > 0 && y > 0 && (core.playerBoard[x - 1][y - 1] != 1 && core.playerBoard[x - 1][y - 1] != 3)) {
+					hit = core.fire(x - 1, y - 1, false);
 					if (hit) {
 						center[0] = x - 1;
 						center[1] = y - 1;
@@ -244,8 +240,8 @@ public class Computer {
 				}
 			}
 			case 5 -> {
-				if (y > 0 && x < 9 && (game.playerBoard[x + 1][y - 1] != 1 && game.playerBoard[x + 1][y - 1] != 3)) {
-					hit = game.fire(x + 1, y - 1, false);
+				if (y > 0 && x < 9 && (core.playerBoard[x + 1][y - 1] != 1 && core.playerBoard[x + 1][y - 1] != 3)) {
+					hit = core.fire(x + 1, y - 1, false);
 					if (hit) {
 						center[0] = x + 1;
 						center[1] = y - 1;
@@ -276,8 +272,8 @@ public class Computer {
 				}
 			}
 			case 6 -> {
-				if (x < 9 && y < 9 && (game.playerBoard[x + 1][y + 1] != 1 && game.playerBoard[x + 1][y + 1] != 3)) {
-					hit = game.fire(x + 1, y + 1, false);
+				if (x < 9 && y < 9 && (core.playerBoard[x + 1][y + 1] != 1 && core.playerBoard[x + 1][y + 1] != 3)) {
+					hit = core.fire(x + 1, y + 1, false);
 					if (hit) {
 						center[0] = x + 1;
 						center[1] = y + 1;
@@ -308,8 +304,8 @@ public class Computer {
 				}
 			}
 			case 7 -> {
-				if (y < 9 && x > 0 && (game.playerBoard[x - 1][y + 1] != 1 && game.playerBoard[x - 1][y + 1] != 3)) {
-					hit = game.fire(x - 1, y + 1, false);
+				if (y < 9 && x > 0 && (core.playerBoard[x - 1][y + 1] != 1 && core.playerBoard[x - 1][y + 1] != 3)) {
+					hit = core.fire(x - 1, y + 1, false);
 					if (hit) {
 						center[0] = x - 1;
 						center[1] = y + 1;
@@ -413,7 +409,7 @@ public class Computer {
 	public void setDestroyer() {
 		int x = rand.nextInt(0, 9);
 		int y = rand.nextInt(0, 9);
-		game.placeDestroyer(x, y, false);
+		core.placeDestroyer(x, y, false);
 	}
 	
 	/**
@@ -426,7 +422,7 @@ public class Computer {
 			x = rand.nextInt(0, 10);
 			y = rand.nextInt(0, 10);
 			direction = rand.nextInt(0, 2);
-			validMove = game.placeSub(x, y, direction, false);
+			validMove = core.placeSub(x, y, direction, false);
 		}
 	}
 	
@@ -440,7 +436,7 @@ public class Computer {
 			x = rand.nextInt(0, 10);
 			y = rand.nextInt(0, 10);
 			direction = rand.nextInt(0, 2);
-			validMove = game.placeCruiser(x, y, direction, false);
+			validMove = core.placeCruiser(x, y, direction, false);
 		}
 	}
 }

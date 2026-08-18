@@ -38,7 +38,7 @@ This was a very simple project. If I remember correctly, the most difficult part
 To run this program, download the repository (again, please do not change the folder structure), open in a modern edition of VS Code (with the C# extensions), navigate to either Minesweeper/MinesweeperBase or Minesweeper/MinesweeperGUI, and run:
 ```bash
 dotnet clean
-dotnet build
+dotnet buigitld
 dotnet run
 ```
 Screenshots can be found in /Minesweeper/screenshots.md or in /Screenshots
