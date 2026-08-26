@@ -10,8 +10,5 @@
         <module name="BattleShip" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="MeterReader" target="21" />
-    </bytecodeTargetLevel>
   </component>
 </project>
