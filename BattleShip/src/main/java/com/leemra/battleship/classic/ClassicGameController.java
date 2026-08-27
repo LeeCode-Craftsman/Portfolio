@@ -104,34 +104,37 @@ public class ClassicGameController implements IController {
         if (!core.isGameOver()) {
             switch (placedShips) {
                 case 0 -> {
-                    if (!core.placeDestroyer(i, j, true)) return;
-                    computer.setDestroyer();
-                    placedShips++;
-                    instructionLabel.setText("Place Your Submarine");
-                    display(true);
+                    if (core.place2x2(i, j, core.playerBoard, true)) {
+                        computer.setDestroyer();
+                        placedShips++;
+                        instructionLabel.setText("Place Your Submarine");
+                        display(true);
+                    }
                 }
                 case 1 -> {
-                    if (!core.placeSub(i, j, getDirection(true), true)) return;
-                    computer.setSub();
-                    placedShips++;
-                    instructionLabel.setText("Place Your Cruiser");
-                    display(true);
+                    if (core.place1x3(i, j, getDirection(true), core.playerBoard, true)) {
+                        computer.setSub();
+                        placedShips++;
+                        instructionLabel.setText("Place Your Cruiser");
+                        display(true);
+                    }
                 }
                 case 2 -> {
-                    if (!core.placeCruiser(i, j, getDirection(false), true)) return;
-                    computer.setCruiser();
-                    placedShips++;
-                    instructionLabel.setText("FIRE!");
-                    display(false);
+                    if (!core.place1x3(i, j, getDirection(false), core.playerBoard, true)) {
+                        computer.setCruiser();
+                        placedShips++;
+                        instructionLabel.setText("FIRE!");
+                        display(false);
+                    }
                 }
                 case 3 -> {
-                    boolean hit = core.fire(i, j, true);
+                    boolean hit = core.fire(i, j, core.cpBoard);
                     display(false);
-                    if (core.isWinner(true)) onWin(true);
+                    if (core.isGameLost(core.playerBoard)) onWin(true);
                     if (hit) return;
                     Timeline timeline = playerMissedSequence();
                     timeline.setOnFinished(e -> {
-                        if (core.isWinner(false)) onWin(false);
+                        if (core.isGameLost(core.cpBoard)) onWin(false);
                     });
                     timeline.play();
                 }
@@ -195,12 +198,14 @@ public class ClassicGameController implements IController {
         }
 
         if (choice.showAndWait().isEmpty()) {
-            return 3;
+            return 5;
         }
         return switch (choice.getSelectedItem()) {
-            case "Left to Right (\\)", "Vertical (|)" -> 0;
-            case "Right to Left (/)", "Horizontal (-)" -> 1;
-            default -> 3;
+            case "Vertical (|)" -> 0;
+            case  "Horizontal (-)" -> 1;
+            case "Left to Right (\\)" -> 2;
+            case"Right to Left (/)" -> 3;
+            default -> 4;
         };
     }
 

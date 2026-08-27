@@ -73,7 +73,7 @@ class Server(host: String, port: Int) {
     fun placeShip(coords: Coordinates): PlaceShip {
         when (shipsPlaced) {
             0 -> {
-                if (core.placeCruiser(coords.x, coords.y, coords.orientation, true)) {
+                if (core.place1x3(coords.x, coords.y, coords.orientation, core.playerBoard, true)) {
                     computer.setCruiser()
                     shipsPlaced++
                 }
@@ -81,7 +81,7 @@ class Server(host: String, port: Int) {
             }
 
             1 -> {
-                if (core.placeSub(coords.x, coords.y, coords.orientation, true)) {
+                if (core.place1x3(coords.x, coords.y, coords.orientation+2, core.playerBoard, true)) {
                     computer.setSub()
                     shipsPlaced++
                 }
@@ -89,23 +89,24 @@ class Server(host: String, port: Int) {
             }
 
             2 -> {
-                if (core.placeDestroyer(coords.x, coords.y, true)) {
+                if (core.place2x2(coords.x, coords.y, core.playerBoard, true)) {
                     computer.setDestroyer()
                     shipsPlaced++
                 }
                 return PlaceShip(core.list.toMutableList() as ArrayList<IntArray>)
             }
+            else -> return PlaceShip(ArrayList())
         }
-        // This code will never be reached, but the compiler insists on it.
-        return PlaceShip(ArrayList())
     }
 
     fun fire(coords: Coordinates): FiredList {
-        if (core.fire(coords.x, coords.y, true)) {
-            return FiredList(ArrayList(), core.isGameOver, core.isWinner(true))
+        if (core.fire(coords.x, coords.y, core.cpBoard)) {
+            return FiredList(ArrayList(), core.isGameOver, core.isGameLost(core.cpBoard))
         } else {
             computer.fire()
-            val winner = if (core.isWinner(true)) true else if (core.isWinner(false)) false else false
+            // This actually isn't redundant. I need to run core.isGameLost() on both boards, and I need to know if either is true, and which one if so.
+            val winner = if (core.isGameLost(core.playerBoard)) true else if (core.isGameLost(core.cpBoard)) false else false
+
             return FiredList(computer.fired.toMutableList() as ArrayList<IntArray>, core.isGameOver, winner)
         }
     }
