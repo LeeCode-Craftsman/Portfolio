@@ -58,7 +58,7 @@ public class Computer {
                     x = rand.nextInt(0, 10);
                     y = rand.nextInt(0, 10);
                 } while ((core.playerBoard[x][y] == 1) || (core.playerBoard[x][y] == 3));
-                hit = new boolean[]{core.fire(x, y, false), true};
+                hit = new boolean[]{core.fire(x, y, core.playerBoard), true};
                 fired.add(new int[]{x, y});
                 if (hit[0]) {
                     tracing = true;
@@ -96,7 +96,7 @@ public class Computer {
         switch (dDN[1]) {
             case 0 -> {
                 if (x > 0 && (core.playerBoard[x - 1][y] != 1 && core.playerBoard[x - 1][y] != 3)) {
-                    hit = core.fire(x - 1, y, false);
+                    hit = core.fire(x - 1, y, core.playerBoard);
                     fired.add(new int[]{x - 1, y});
                     if (hit) {
                         center[0] = x - 1;
@@ -127,7 +127,7 @@ public class Computer {
             }
             case 1 -> {
                 if (y > 0 && (core.playerBoard[x][y - 1] != 1 && core.playerBoard[x][y - 1] != 3)) {
-                    hit = core.fire(x, y - 1, false);
+                    hit = core.fire(x, y - 1, core.playerBoard);
                     fired.add(new int[]{x, y - 1});
                     if (hit) {
                         center[0] = x;
@@ -158,7 +158,7 @@ public class Computer {
             }
             case 2 -> {
                 if (x < 9 && (core.playerBoard[x + 1][y] != 1 && core.playerBoard[x + 1][y] != 3)) {
-                    hit = core.fire(x + 1, y, false);
+                    hit = core.fire(x + 1, y, core.playerBoard);
                     fired.add(new int[]{x + 1, y});
                     if (hit) {
                         center[0] = x + 1;
@@ -189,7 +189,7 @@ public class Computer {
             }
             case 3 -> {
                 if (y < 9 && (core.playerBoard[x][y + 1] != 1 && core.playerBoard[x][y + 1] != 3)) {
-                    hit = core.fire(x, y + 1, false);
+                    hit = core.fire(x, y + 1, core.playerBoard);
                     fired.add(new int[]{x, y + 1});
                     if (hit) {
                         center[0] = x;
@@ -220,7 +220,7 @@ public class Computer {
             }
             case 4 -> {
                 if (x > 0 && y > 0 && (core.playerBoard[x - 1][y - 1] != 1 && core.playerBoard[x - 1][y - 1] != 3)) {
-                    hit = core.fire(x - 1, y - 1, false);
+                    hit = core.fire(x - 1, y - 1, core.playerBoard);
                     fired.add(new int[]{x - 1, y - 1});
                     if (hit) {
                         center[0] = x - 1;
@@ -253,7 +253,7 @@ public class Computer {
             }
             case 5 -> {
                 if (y > 0 && x < 9 && (core.playerBoard[x + 1][y - 1] != 1 && core.playerBoard[x + 1][y - 1] != 3)) {
-                    hit = core.fire(x + 1, y - 1, false);
+                    hit = core.fire(x + 1, y - 1, core.playerBoard);
                     fired.add(new int[]{x + 1, y - 1});
                     if (hit) {
                         center[0] = x + 1;
@@ -286,7 +286,7 @@ public class Computer {
             }
             case 6 -> {
                 if (x < 9 && y < 9 && (core.playerBoard[x + 1][y + 1] != 1 && core.playerBoard[x + 1][y + 1] != 3)) {
-                    hit = core.fire(x + 1, y + 1, false);
+                    hit = core.fire(x + 1, y + 1, core.playerBoard);
                     fired.add(new int[]{x + 1, y + 1});
                     if (hit) {
                         center[0] = x + 1;
@@ -319,7 +319,7 @@ public class Computer {
             }
             case 7 -> {
                 if (y < 9 && x > 0 && (core.playerBoard[x - 1][y + 1] != 1 && core.playerBoard[x - 1][y + 1] != 3)) {
-                    hit = core.fire(x - 1, y + 1, false);
+                    hit = core.fire(x - 1, y + 1, core.playerBoard);
                     fired.add(new int[]{x - 1, y + 1});
                     if (hit) {
                         center[0] = x - 1;
@@ -418,7 +418,7 @@ public class Computer {
     public void setDestroyer() {
         int x = rand.nextInt(0, 9);
         int y = rand.nextInt(0, 9);
-        core.placeDestroyer(x, y, false);
+        core.place2x2(x, y, core.cpBoard, false);
     }
 
     /**
@@ -430,8 +430,8 @@ public class Computer {
         while (!validMove) {
             x = rand.nextInt(0, 10);
             y = rand.nextInt(0, 10);
-            direction = rand.nextInt(0, 2);
-            validMove = core.placeSub(x, y, direction, false);
+            direction = rand.nextInt(2, 5);
+            validMove = core.place1x3(x, y, direction, core.cpBoard,false);
         }
     }
 
@@ -445,7 +445,7 @@ public class Computer {
             x = rand.nextInt(0, 10);
             y = rand.nextInt(0, 10);
             direction = rand.nextInt(0, 2);
-            validMove = core.placeCruiser(x, y, direction, false);
+            validMove = core.place1x3(x, y, direction, core.cpBoard, false);
         }
     }
 }
