@@ -1,7 +1,6 @@
 package com.leemra.battleship.core
 
 import com.leemra.battleship.IController
-import com.leemra.battleship.ktor.Server
 import javafx.application.Application
 import javafx.application.Platform
 import javafx.fxml.FXMLLoader
@@ -10,10 +9,6 @@ import javafx.stage.Screen
 import javafx.stage.Stage
 
 class Launcher : Application() {
-
-    var server: Server? = null
-    val host = "0.0.0.0"
-    val port = 8080
     lateinit var controller: IController
     override fun start(stage: Stage) {
         try {
@@ -26,7 +21,6 @@ class Launcher : Application() {
             stage.title = "BattleShip"
             scene.stylesheets.add("atlantafx/cupertino-dark.css")
             stage.scene = scene
-            server = Server(host, port)
             stage.show()
         } catch (_: Exception) {
         }

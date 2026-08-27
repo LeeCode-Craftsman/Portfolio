@@ -7,12 +7,12 @@ public class BattleShipCore {
      * playerBoard represents the Player's board.
      * 0 = empty, 1 = miss, 2 = occupied, 3 = hit
      */
-    int[][] playerBoard = new int[10][10];
+    public int[][] playerBoard = new int[10][10];
     /**
      * cpBoard represents the Computer's board.
      * 0 = empty, 1 = miss, 2 = occupied, 3 = hit
      */
-    int[][] cpBoard = new int[10][10];
+    public int[][] cpBoard = new int[10][10];
     /**
      * A check to see if the game is over
      */

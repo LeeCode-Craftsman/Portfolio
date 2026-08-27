@@ -1,7 +1,7 @@
 package com.leemra.battleship.ktor
 
 import com.leemra.battleship.IController
-import com.leemra.battleship.core.ClassicBattleShip
+import com.leemra.battleship.classic.ClassicBattleShip
 import com.leemra.battleship.core.Launcher
 import io.ktor.client.*
 import io.ktor.client.call.*
@@ -232,6 +232,10 @@ class KtorGameController() : IController {
 }
 
 class LauncherController() : IController {
+
+    val host = "0.0.0.0"
+    val port = 8080
+    lateinit var server: Server
     override var app: Application? = null
         set(value) {
             field = value
@@ -263,6 +267,7 @@ class LauncherController() : IController {
 
     fun onNewClick(event: ActionEvent) {
         val newBattleShip = NewBattleShip(app, this)
+        server = Server(host, port)
         newBattleShip.run((event.source as Node).scene.window as Stage)
     }
 

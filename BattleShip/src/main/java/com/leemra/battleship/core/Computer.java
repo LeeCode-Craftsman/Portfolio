@@ -1,5 +1,7 @@
 package com.leemra.battleship.core;
 
+import com.leemra.battleship.classic.ClassicGameController;
+
 import java.util.ArrayList;
 import java.util.Random;
 
