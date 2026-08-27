@@ -1,6 +1,9 @@
-package com.leemra.battleship.core;
+package com.leemra.battleship.classic;
 
 import com.leemra.battleship.IController;
+import com.leemra.battleship.core.BattleShipCore;
+import com.leemra.battleship.core.Computer;
+import com.leemra.battleship.core.Launcher;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;

@@ -1,4 +1,4 @@
-package com.leemra.battleship.core;
+package com.leemra.battleship.classic;
 
 import com.leemra.battleship.IController;
 import javafx.application.Application;
